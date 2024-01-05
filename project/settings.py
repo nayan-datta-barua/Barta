@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='thisisahugesecret')
 # DEBUG = True
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1","nayan1122.onrender.com"]
 
 
 # Application definition
@@ -126,9 +126,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 #  STATIC_URL = 'static/'
 AUTH_USER_MODEL = 'news.User'
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# if not DEBUG:
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#     
 
 
 
